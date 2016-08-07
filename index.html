@@ -12,6 +12,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body ng-app="app">
+    <div class="jumbotron col-md-8 col-md-offset-2" ng-controller="MainController">
+    	<p ng-click="addOneToJakasLiczba() ">{{coderspro}}</p>
+    	<p>{{jakasLiczba}}</p>
+		<p>{{credentials.login}}</p>
+		<p>{{credentials.password}}</p>
     
+
+    <input type="text" ng-model="credentials.login">
+	<input type="text" ng-model="credentials.password">
+	<button ng-click="addCredentials(credentials.login,credentials.password)">ADDCREDENTIALS</button>
+</div>
+
+
+
 </body>
 </html>
