@@ -11,6 +11,7 @@
     <script type="text/javascript" src="app.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src = "SecondController.js"></script>
+    <script type="text/javascript" src="ReapetExampleController.js"></script>
 </head>
 <body ng-app="app">
     <div class="jumbotron col-md-8 col-md-offset-2" ng-controller="MainController">
@@ -38,6 +39,36 @@
         <h2>{{loremLorem | uppercase}}</h2>
         <h2>{{loremLorem | limitTo:30}}</h2>
         <h2>{{loremLorem | limitTo:30:30}}</h2>
+    </div>
+
+
+
+    <div class="jumbotron col-md-10 col-md-offset-1" ng-controller="ReapetExampleController">
+        <div class="col-md-6 ">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>IMIĘ</th>
+                        <th>NAZWISKO</th>
+                        <th>NARODOWOŚĆ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="person in exampleArray">
+                        <td>{{person.name}}</td>
+                        <td>{{person.surname}}</td>
+                        <td>{{person.nationality}}</td>
+                        <td><button ng-click="showDetails(person)">SHOW DETAILS</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <p ng-if="isNameShown">{{details.name}}</p>
+            <p ng-show="isNameShown">{{details.surname}}</p>
+            <p>{{details.nationality}}</p>
+            <button ng-click="hideName()">HIDE NAME TOGGLE</button>
+        </div>
     </div>
 
 
